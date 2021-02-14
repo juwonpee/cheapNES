@@ -107,7 +107,7 @@ nesCPU::nesCPU() {
 		{ "EOR", &a::EOR, &a::ABX, 4 },
 		{ "LSR", &a::LSR, &a::ABX, 7 },
 		{ "???", &a::XXX, &a::IMP, 7 },
-
+		//7
 		{ "RTS", &a::RTS, &a::IMP, 6 },
 		{ "ADC", &a::ADC, &a::IZX, 6 },
 		{ "???", &a::XXX, &a::IMP, 2 },
@@ -124,7 +124,7 @@ nesCPU::nesCPU() {
 		{ "ADC", &a::ADC, &a::ABS, 4 },
 		{ "ROR", &a::ROR, &a::ABS, 6 },
 		{ "???", &a::XXX, &a::IMP, 6 },
-
+		//8
 		{ "BVS", &a::BVS, &a::REL, 2 },
 		{ "ADC", &a::ADC, &a::IZY, 5 },
 		{ "???", &a::XXX, &a::IMP, 2 },
@@ -141,7 +141,7 @@ nesCPU::nesCPU() {
 		{ "ADC", &a::ADC, &a::ABX, 4 },
 		{ "ROR", &a::ROR, &a::ABX, 7 },
 		{ "???", &a::XXX, &a::IMP, 7 },
-
+		//9
 		{ "???", &a::NOP, &a::IMP, 2 },
 		{ "STA", &a::STA, &a::IZX, 6 },
 		{ "???", &a::NOP, &a::IMP, 2 },
@@ -158,7 +158,7 @@ nesCPU::nesCPU() {
 		{ "STA", &a::STA, &a::ABS, 4 },
 		{ "STX", &a::STX, &a::ABS, 4 },
 		{ "???", &a::XXX, &a::IMP, 4 },
-
+		//A
 		{ "BCC", &a::BCC, &a::REL, 2 },
 		{ "STA", &a::STA, &a::IZY, 6 },
 		{ "???", &a::XXX, &a::IMP, 2 },
@@ -175,14 +175,57 @@ nesCPU::nesCPU() {
 		{ "STA", &a::STA, &a::ABX, 5 },
 		{ "???", &a::XXX, &a::IMP, 5 },
 		{ "???", &a::XXX, &a::IMP, 5 },
-
+		//B
 		{ "LDY", &a::LDY, &a::IMM, 2 },
 		{ "LDA", &a::LDA, &a::IZX, 6 },
-		{ "LDX", &a::LDX, &a::IMM, 2 },{ "???", &a::XXX, &a::IMP, 6 },{ "LDY", &a::LDY, &a::ZP0, 3 },{ "LDA", &a::LDA, &a::ZP0, 3 },{ "LDX", &a::LDX, &a::ZP0, 3 },{ "???", &a::XXX, &a::IMP, 3 },{ "TAY", &a::TAY, &a::IMP, 2 },{ "LDA", &a::LDA, &a::IMM, 2 },{ "TAX", &a::TAX, &a::IMP, 2 },{ "???", &a::XXX, &a::IMP, 2 },{ "LDY", &a::LDY, &a::ABS, 4 },{ "LDA", &a::LDA, &a::ABS, 4 },{ "LDX", &a::LDX, &a::ABS, 4 },{ "???", &a::XXX, &a::IMP, 4 },
-
-		{ "BCS", &a::BCS, &a::REL, 2 },{ "LDA", &a::LDA, &a::IZY, 5 },{ "???", &a::XXX, &a::IMP, 2 },{ "???", &a::XXX, &a::IMP, 5 },{ "LDY", &a::LDY, &a::ZPX, 4 },{ "LDA", &a::LDA, &a::ZPX, 4 },{ "LDX", &a::LDX, &a::ZPY, 4 },{ "???", &a::XXX, &a::IMP, 4 },{ "CLV", &a::CLV, &a::IMP, 2 },{ "LDA", &a::LDA, &a::ABY, 4 },{ "TSX", &a::TSX, &a::IMP, 2 },{ "???", &a::XXX, &a::IMP, 4 },{ "LDY", &a::LDY, &a::ABX, 4 },{ "LDA", &a::LDA, &a::ABX, 4 },{ "LDX", &a::LDX, &a::ABY, 4 },{ "???", &a::XXX, &a::IMP, 4 },
-
-		{ "CPY", &a::CPY, &a::IMM, 2 },{ "CMP", &a::CMP, &a::IZX, 6 },{ "???", &a::NOP, &a::IMP, 2 },{ "???", &a::XXX, &a::IMP, 8 },{ "CPY", &a::CPY, &a::ZP0, 3 },{ "CMP", &a::CMP, &a::ZP0, 3 },{ "DEC", &a::DEC, &a::ZP0, 5 },{ "???", &a::XXX, &a::IMP, 5 },{ "INY", &a::INY, &a::IMP, 2 },{ "CMP", &a::CMP, &a::IMM, 2 },{ "DEX", &a::DEX, &a::IMP, 2 },{ "???", &a::XXX, &a::IMP, 2 },{ "CPY", &a::CPY, &a::ABS, 4 },{ "CMP", &a::CMP, &a::ABS, 4 },{ "DEC", &a::DEC, &a::ABS, 6 },{ "???", &a::XXX, &a::IMP, 6 },
+		{ "LDX", &a::LDX, &a::IMM, 2 },
+		{ "???", &a::XXX, &a::IMP, 6 },
+		{ "LDY", &a::LDY, &a::ZP0, 3 },
+		{ "LDA", &a::LDA, &a::ZP0, 3 },
+		{ "LDX", &a::LDX, &a::ZP0, 3 },
+		{ "???", &a::XXX, &a::IMP, 3 },
+		{ "TAY", &a::TAY, &a::IMP, 2 },
+		{ "LDA", &a::LDA, &a::IMM, 2 },
+		{ "TAX", &a::TAX, &a::IMP, 2 },
+		{ "???", &a::XXX, &a::IMP, 2 },
+		{ "LDY", &a::LDY, &a::ABS, 4 },
+		{ "LDA", &a::LDA, &a::ABS, 4 },
+		{ "LDX", &a::LDX, &a::ABS, 4 },
+		{ "???", &a::XXX, &a::IMP, 4 },
+		//C
+		{ "BCS", &a::BCS, &a::REL, 2 },
+		{ "LDA", &a::LDA, &a::IZY, 5 },
+		{ "???", &a::XXX, &a::IMP, 2 },
+		{ "???", &a::XXX, &a::IMP, 5 },
+		{ "LDY", &a::LDY, &a::ZPX, 4 },
+		{ "LDA", &a::LDA, &a::ZPX, 4 },
+		{ "LDX", &a::LDX, &a::ZPY, 4 },
+		{ "???", &a::XXX, &a::IMP, 4 },
+		{ "CLV", &a::CLV, &a::IMP, 2 },
+		{ "LDA", &a::LDA, &a::ABY, 4 },
+		{ "TSX", &a::TSX, &a::IMP, 2 },
+		{ "???", &a::XXX, &a::IMP, 4 },
+		{ "LDY", &a::LDY, &a::ABX, 4 },
+		{ "LDA", &a::LDA, &a::ABX, 4 },
+		{ "LDX", &a::LDX, &a::ABY, 4 },
+		{ "???", &a::XXX, &a::IMP, 4 },
+		//D
+		{ "CPY", &a::CPY, &a::IMM, 2 },
+		{ "CMP", &a::CMP, &a::IZX, 6 },
+		{ "???", &a::NOP, &a::IMP, 2 },
+		{ "???", &a::XXX, &a::IMP, 8 },
+		{ "CPY", &a::CPY, &a::ZP0, 3 },
+		{ "CMP", &a::CMP, &a::ZP0, 3 },
+		{ "DEC", &a::DEC, &a::ZP0, 5 },
+		{ "???", &a::XXX, &a::IMP, 5 },
+		{ "INY", &a::INY, &a::IMP, 2 },
+		{ "CMP", &a::CMP, &a::IMM, 2 },
+		{ "DEX", &a::DEX, &a::IMP, 2 },
+		{ "???", &a::XXX, &a::IMP, 2 },
+		{ "CPY", &a::CPY, &a::ABS, 4 },
+		{ "CMP", &a::CMP, &a::ABS, 4 },
+		{ "DEC", &a::DEC, &a::ABS, 6 },
+		{ "???", &a::XXX, &a::IMP, 6 },
 
 		{ "BNE", &a::BNE, &a::REL, 2 },{ "CMP", &a::CMP, &a::IZY, 5 },{ "???", &a::XXX, &a::IMP, 2 },{ "???", &a::XXX, &a::IMP, 8 },{ "???", &a::NOP, &a::IMP, 4 },{ "CMP", &a::CMP, &a::ZPX, 4 },{ "DEC", &a::DEC, &a::ZPX, 6 },{ "???", &a::XXX, &a::IMP, 6 },{ "CLD", &a::CLD, &a::IMP, 2 },{ "CMP", &a::CMP, &a::ABY, 4 },{ "NOP", &a::NOP, &a::IMP, 2 },{ "???", &a::XXX, &a::IMP, 7 },{ "???", &a::NOP, &a::IMP, 4 },{ "CMP", &a::CMP, &a::ABX, 4 },{ "DEC", &a::DEC, &a::ABX, 7 },{ "???", &a::XXX, &a::IMP, 7 },
 
