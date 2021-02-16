@@ -3,7 +3,7 @@ public class CPU {
     private byte x;                                 // x index register
     private byte y;                                 // y index register
     private byte st;                                // stack pointer (only on first page)
-    private short pc;                               // program counter
+    private char pc;                               // program counter
     private byte flags;
 
     public CPU() {
@@ -20,7 +20,7 @@ public class CPU {
     public boolean clock(byte opcode) {
         return false;
     }
-    private byte fetch(short address) {
+    private byte fetch(char address) {
         return 0;
     }
 
@@ -303,19 +303,29 @@ public class CPU {
     };
 
     // reset CPU into known state
-    private void reset() {
-        short resetAddress = (short) 0xFFFC;
+    private void reset() {                  // Todo
+        char resetAddress = 0xFFFC;
         byte temp = fetch(resetAddress);
-        pc = 
+        pc = 0;
+        pc = (char) temp;
+        temp = fetch(resetAddress);
+        pc = (char) (pc + (temp << 8));
+
+        a = 0;
+        x = 0;
+        y = 0;
+        st = (byte) 0xFD;
+        //status = 
+
     }
 
     // interrupt request
-    private void irq() {
+    private void irq() {                    //Todo
 
     }
 
     // unmaskable interrupt request
-    private void nmi() {
+    private void nmi() {                    //Todo
 
     }
 
