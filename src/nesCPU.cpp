@@ -5,7 +5,7 @@
 nesCPU::nesCPU() {
     using a = nesCPU;
     opcodeLookup = {
-		// 1
+		// 0
         { "BRK", &a::BRK, &a::IMM, 7 },
 		{ "ORA", &a::ORA, &a::IZX, 6 },
 		{ "???", &a::XXX, &a::IMP, 2 },
@@ -22,7 +22,7 @@ nesCPU::nesCPU() {
 		{ "ORA", &a::ORA, &a::ABS, 4 },
 		{ "ASL", &a::ASL, &a::ABS, 6 },
 		{ "???", &a::XXX, &a::IMP, 6 },
-		//2
+		//1
 		{ "BPL", &a::BPL, &a::REL, 2 },
 		{ "ORA", &a::ORA, &a::IZY, 5 },
 		{ "???", &a::XXX, &a::IMP, 2 },
@@ -39,7 +39,7 @@ nesCPU::nesCPU() {
 		{ "ORA", &a::ORA, &a::ABX, 4 },
 		{ "ASL", &a::ASL, &a::ABX, 7 },
 		{ "???", &a::XXX, &a::IMP, 7 },
-		//3
+		//2
 		{ "JSR", &a::JSR, &a::ABS, 6 },
 		{ "AND", &a::AND, &a::IZX, 6 },
 		{ "???", &a::XXX, &a::IMP, 2 },
@@ -56,7 +56,7 @@ nesCPU::nesCPU() {
 		{ "AND", &a::AND, &a::ABS, 4 },
 		{ "ROL", &a::ROL, &a::ABS, 6 },
 		{ "???", &a::XXX, &a::IMP, 6 },
-		//4
+		//3
 		{ "BMI", &a::BMI, &a::REL, 2 },
 		{ "AND", &a::AND, &a::IZY, 5 },
 		{ "???", &a::XXX, &a::IMP, 2 },
@@ -73,7 +73,7 @@ nesCPU::nesCPU() {
 		{ "AND", &a::AND, &a::ABX, 4 },
 		{ "ROL", &a::ROL, &a::ABX, 7 },
 		{ "???", &a::XXX, &a::IMP, 7 },
-		//5
+		//4
 		{ "RTI", &a::RTI, &a::IMP, 6 },
 		{ "EOR", &a::EOR, &a::IZX, 6 },
 		{ "???", &a::XXX, &a::IMP, 2 },
@@ -90,7 +90,7 @@ nesCPU::nesCPU() {
 		{ "EOR", &a::EOR, &a::ABS, 4 },
 		{ "LSR", &a::LSR, &a::ABS, 6 },
 		{ "???", &a::XXX, &a::IMP, 6 },
-		//6
+		//5
 		{ "BVC", &a::BVC, &a::REL, 2 },
 		{ "EOR", &a::EOR, &a::IZY, 5 },
 		{ "???", &a::XXX, &a::IMP, 2 },
@@ -107,7 +107,7 @@ nesCPU::nesCPU() {
 		{ "EOR", &a::EOR, &a::ABX, 4 },
 		{ "LSR", &a::LSR, &a::ABX, 7 },
 		{ "???", &a::XXX, &a::IMP, 7 },
-		//7
+		//6
 		{ "RTS", &a::RTS, &a::IMP, 6 },
 		{ "ADC", &a::ADC, &a::IZX, 6 },
 		{ "???", &a::XXX, &a::IMP, 2 },
@@ -124,7 +124,7 @@ nesCPU::nesCPU() {
 		{ "ADC", &a::ADC, &a::ABS, 4 },
 		{ "ROR", &a::ROR, &a::ABS, 6 },
 		{ "???", &a::XXX, &a::IMP, 6 },
-		//8
+		//7
 		{ "BVS", &a::BVS, &a::REL, 2 },
 		{ "ADC", &a::ADC, &a::IZY, 5 },
 		{ "???", &a::XXX, &a::IMP, 2 },
@@ -141,7 +141,7 @@ nesCPU::nesCPU() {
 		{ "ADC", &a::ADC, &a::ABX, 4 },
 		{ "ROR", &a::ROR, &a::ABX, 7 },
 		{ "???", &a::XXX, &a::IMP, 7 },
-		//9
+		//8
 		{ "???", &a::NOP, &a::IMP, 2 },
 		{ "STA", &a::STA, &a::IZX, 6 },
 		{ "???", &a::NOP, &a::IMP, 2 },
@@ -158,7 +158,7 @@ nesCPU::nesCPU() {
 		{ "STA", &a::STA, &a::ABS, 4 },
 		{ "STX", &a::STX, &a::ABS, 4 },
 		{ "???", &a::XXX, &a::IMP, 4 },
-		//A
+		//9
 		{ "BCC", &a::BCC, &a::REL, 2 },
 		{ "STA", &a::STA, &a::IZY, 6 },
 		{ "???", &a::XXX, &a::IMP, 2 },
@@ -175,7 +175,7 @@ nesCPU::nesCPU() {
 		{ "STA", &a::STA, &a::ABX, 5 },
 		{ "???", &a::XXX, &a::IMP, 5 },
 		{ "???", &a::XXX, &a::IMP, 5 },
-		//B
+		//A
 		{ "LDY", &a::LDY, &a::IMM, 2 },
 		{ "LDA", &a::LDA, &a::IZX, 6 },
 		{ "LDX", &a::LDX, &a::IMM, 2 },
@@ -192,7 +192,7 @@ nesCPU::nesCPU() {
 		{ "LDA", &a::LDA, &a::ABS, 4 },
 		{ "LDX", &a::LDX, &a::ABS, 4 },
 		{ "???", &a::XXX, &a::IMP, 4 },
-		//C
+		//B
 		{ "BCS", &a::BCS, &a::REL, 2 },
 		{ "LDA", &a::LDA, &a::IZY, 5 },
 		{ "???", &a::XXX, &a::IMP, 2 },
@@ -209,7 +209,7 @@ nesCPU::nesCPU() {
 		{ "LDA", &a::LDA, &a::ABX, 4 },
 		{ "LDX", &a::LDX, &a::ABY, 4 },
 		{ "???", &a::XXX, &a::IMP, 4 },
-		//D
+		//C
 		{ "CPY", &a::CPY, &a::IMM, 2 },
 		{ "CMP", &a::CMP, &a::IZX, 6 },
 		{ "???", &a::NOP, &a::IMP, 2 },
@@ -226,12 +226,57 @@ nesCPU::nesCPU() {
 		{ "CMP", &a::CMP, &a::ABS, 4 },
 		{ "DEC", &a::DEC, &a::ABS, 6 },
 		{ "???", &a::XXX, &a::IMP, 6 },
-
-		{ "BNE", &a::BNE, &a::REL, 2 },{ "CMP", &a::CMP, &a::IZY, 5 },{ "???", &a::XXX, &a::IMP, 2 },{ "???", &a::XXX, &a::IMP, 8 },{ "???", &a::NOP, &a::IMP, 4 },{ "CMP", &a::CMP, &a::ZPX, 4 },{ "DEC", &a::DEC, &a::ZPX, 6 },{ "???", &a::XXX, &a::IMP, 6 },{ "CLD", &a::CLD, &a::IMP, 2 },{ "CMP", &a::CMP, &a::ABY, 4 },{ "NOP", &a::NOP, &a::IMP, 2 },{ "???", &a::XXX, &a::IMP, 7 },{ "???", &a::NOP, &a::IMP, 4 },{ "CMP", &a::CMP, &a::ABX, 4 },{ "DEC", &a::DEC, &a::ABX, 7 },{ "???", &a::XXX, &a::IMP, 7 },
-
-		{ "CPX", &a::CPX, &a::IMM, 2 },{ "SBC", &a::SBC, &a::IZX, 6 },{ "???", &a::NOP, &a::IMP, 2 },{ "???", &a::XXX, &a::IMP, 8 },{ "CPX", &a::CPX, &a::ZP0, 3 },{ "SBC", &a::SBC, &a::ZP0, 3 },{ "INC", &a::INC, &a::ZP0, 5 },{ "???", &a::XXX, &a::IMP, 5 },{ "INX", &a::INX, &a::IMP, 2 },{ "SBC", &a::SBC, &a::IMM, 2 },{ "NOP", &a::NOP, &a::IMP, 2 },{ "???", &a::SBC, &a::IMP, 2 },{ "CPX", &a::CPX, &a::ABS, 4 },{ "SBC", &a::SBC, &a::ABS, 4 },{ "INC", &a::INC, &a::ABS, 6 },{ "???", &a::XXX, &a::IMP, 6 },
-
-		{ "BEQ", &a::BEQ, &a::REL, 2 },{ "SBC", &a::SBC, &a::IZY, 5 },{ "???", &a::XXX, &a::IMP, 2 },{ "???", &a::XXX, &a::IMP, 8 },{ "???", &a::NOP, &a::IMP, 4 },{ "SBC", &a::SBC, &a::ZPX, 4 },{ "INC", &a::INC, &a::ZPX, 6 },{ "???", &a::XXX, &a::IMP, 6 },{ "SED", &a::SED, &a::IMP, 2 },{ "SBC", &a::SBC, &a::ABY, 4 },{ "NOP", &a::NOP, &a::IMP, 2 },{ "???", &a::XXX, &a::IMP, 7 },{ "???", &a::NOP, &a::IMP, 4 },{ "SBC", &a::SBC, &a::ABX, 4 },{ "INC", &a::INC, &a::ABX, 7 },{ "???", &a::XXX, &a::IMP, 7 },
+		//D
+		{ "BNE", &a::BNE, &a::REL, 2 },
+		{ "CMP", &a::CMP, &a::IZY, 5 },
+		{ "???", &a::XXX, &a::IMP, 2 },
+		{ "???", &a::XXX, &a::IMP, 8 },
+		{ "???", &a::NOP, &a::IMP, 4 },
+		{ "CMP", &a::CMP, &a::ZPX, 4 },
+		{ "DEC", &a::DEC, &a::ZPX, 6 },
+		{ "???", &a::XXX, &a::IMP, 6 },
+		{ "CLD", &a::CLD, &a::IMP, 2 },
+		{ "CMP", &a::CMP, &a::ABY, 4 },
+		{ "NOP", &a::NOP, &a::IMP, 2 },
+		{ "???", &a::XXX, &a::IMP, 7 },
+		{ "???", &a::NOP, &a::IMP, 4 },
+		{ "CMP", &a::CMP, &a::ABX, 4 },
+		{ "DEC", &a::DEC, &a::ABX, 7 },
+		{ "???", &a::XXX, &a::IMP, 7 },
+		//E
+		{ "CPX", &a::CPX, &a::IMM, 2 },
+		{ "SBC", &a::SBC, &a::IZX, 6 },
+		{ "???", &a::NOP, &a::IMP, 2 },
+		{ "???", &a::XXX, &a::IMP, 8 },
+		{ "CPX", &a::CPX, &a::ZP0, 3 },
+		{ "SBC", &a::SBC, &a::ZP0, 3 },
+		{ "INC", &a::INC, &a::ZP0, 5 },
+		{ "???", &a::XXX, &a::IMP, 5 },
+		{ "INX", &a::INX, &a::IMP, 2 },
+		{ "SBC", &a::SBC, &a::IMM, 2 },
+		{ "NOP", &a::NOP, &a::IMP, 2 },
+		{ "???", &a::SBC, &a::IMP, 2 },
+		{ "CPX", &a::CPX, &a::ABS, 4 },
+		{ "SBC", &a::SBC, &a::ABS, 4 },
+		{ "INC", &a::INC, &a::ABS, 6 },
+		{ "???", &a::XXX, &a::IMP, 6 },
+		//F
+		{ "BEQ", &a::BEQ, &a::REL, 2 },
+		{ "SBC", &a::SBC, &a::IZY, 5 },
+		{ "???", &a::XXX, &a::IMP, 2 },
+		{ "???", &a::XXX, &a::IMP, 8 },
+		{ "???", &a::NOP, &a::IMP, 4 },
+		{ "SBC", &a::SBC, &a::ZPX, 4 },
+		{ "INC", &a::INC, &a::ZPX, 6 },
+		{ "???", &a::XXX, &a::IMP, 6 },
+		{ "SED", &a::SED, &a::IMP, 2 },
+		{ "SBC", &a::SBC, &a::ABY, 4 },
+		{ "NOP", &a::NOP, &a::IMP, 2 },
+		{ "???", &a::XXX, &a::IMP, 7 },
+		{ "???", &a::NOP, &a::IMP, 4 },
+		{ "SBC", &a::SBC, &a::ABX, 4 },
+		{ "INC", &a::INC, &a::ABX, 7 },
+		{ "???", &a::XXX, &a::IMP, 7 },
 
     };
 }

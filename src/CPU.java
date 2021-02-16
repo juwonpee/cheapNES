@@ -96,200 +96,210 @@ public class CPU {
         new opcode() { public void opcodeRun() { ROL(); ABX(); }},         // 0x3E
         new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0x3F
 
-        new opcode() { public void opcodeRun() { BMI(); REL(); }},         // 0x40
-        new opcode() { public void opcodeRun() { AND(); IZY(); }},         // 0x41
+        new opcode() { public void opcodeRun() { RTI(); IMP(); }},         // 0x40
+        new opcode() { public void opcodeRun() { EOR(); IZX(); }},         // 0x41
         new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0x42
         new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0x43
         new opcode() { public void opcodeRun() { NOP(); IMP(); }},         // 0x44
-        new opcode() { public void opcodeRun() { AND(); ZPX(); }},         // 0x45
-        new opcode() { public void opcodeRun() { ROL(); ZPX(); }},         // 0x46
+        new opcode() { public void opcodeRun() { EOR(); ZP0(); }},         // 0x45
+        new opcode() { public void opcodeRun() { LSR(); ZP0(); }},         // 0x46
         new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0x47
-        new opcode() { public void opcodeRun() { SEC(); IMP(); }},         // 0x48
-        new opcode() { public void opcodeRun() { AND(); ABY(); }},         // 0x49
-        new opcode() { public void opcodeRun() { NOP(); IMP(); }},         // 0x4A
+        new opcode() { public void opcodeRun() { PHA(); IMP(); }},         // 0x48
+        new opcode() { public void opcodeRun() { EOR(); IMM(); }},         // 0x49
+        new opcode() { public void opcodeRun() { LSR(); IMP(); }},         // 0x4A
         new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0x4B
-        new opcode() { public void opcodeRun() { NOP(); IMP(); }},         // 0x4C
-        new opcode() { public void opcodeRun() { AND(); ABX(); }},         // 0x4D
-        new opcode() { public void opcodeRun() { ROL(); ABX(); }},         // 0x4E
+        new opcode() { public void opcodeRun() { JMP(); ABS(); }},         // 0x4C
+        new opcode() { public void opcodeRun() { EOR(); ABS(); }},         // 0x4D
+        new opcode() { public void opcodeRun() { LSR(); ABS(); }},         // 0x4E
         new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0x4F
 
-        new opcode() { public void opcodeRun() { RTI(); IMP(); }},         // 0x50
-        new opcode() { public void opcodeRun() { EOR(); IZX(); }},         // 0x51
+        new opcode() { public void opcodeRun() { BVC(); REL(); }},         // 0x50
+        new opcode() { public void opcodeRun() { EOR(); IZY(); }},         // 0x51
         new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0x52
         new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0x53
         new opcode() { public void opcodeRun() { NOP(); IMP(); }},         // 0x54
-        new opcode() { public void opcodeRun() { EOR(); ZP0(); }},         // 0x55
-        new opcode() { public void opcodeRun() { LSR(); ZP0(); }},         // 0x56
-        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0x57
-        new opcode() { public void opcodeRun() { PHA(); IMP(); }},         // 0x58
-        new opcode() { public void opcodeRun() { EOR(); IMM(); }},         // 0x59
-        new opcode() { public void opcodeRun() { LSR(); IMP(); }},         // 0x5A
+        new opcode() { public void opcodeRun() { EOR(); ZPX(); }},         // 0x55
+        new opcode() { public void opcodeRun() { LSR(); ZPX(); }},         // 0x56
+        new opcode() { public void opcodeRun() { XXX(); NOP(); }},         // 0x57
+        new opcode() { public void opcodeRun() { CLI(); IMP(); }},         // 0x58
+        new opcode() { public void opcodeRun() { EOR(); ABY(); }},         // 0x59
+        new opcode() { public void opcodeRun() { NOP(); IMP(); }},         // 0x5A
         new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0x5B
-        new opcode() { public void opcodeRun() { JMP(); ABS(); }},         // 0x5C
-        new opcode() { public void opcodeRun() { EOR(); ABS(); }},         // 0x5D
-        new opcode() { public void opcodeRun() { LSR(); ABS(); }},         // 0x5E
+        new opcode() { public void opcodeRun() { NOP(); IMP(); }},         // 0x5C
+        new opcode() { public void opcodeRun() { EOR(); ABX(); }},         // 0x5D
+        new opcode() { public void opcodeRun() { LSR(); ABX(); }},         // 0x5E
         new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0x5F
 
-        new opcode() { public void opcodeRun() { BVC(); REL(); }},         // 0x60
-        new opcode() { public void opcodeRun() { EOR(); IZY(); }},         // 0x61
+        new opcode() { public void opcodeRun() { RTS(); IMP(); }},         // 0x60
+        new opcode() { public void opcodeRun() { ADC(); IZX(); }},         // 0x61
         new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0x62
         new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0x63
         new opcode() { public void opcodeRun() { NOP(); IMP(); }},         // 0x64
-        new opcode() { public void opcodeRun() { EOR(); ZPX(); }},         // 0x65
-        new opcode() { public void opcodeRun() { LSR(); ZPX(); }},         // 0x66
-        new opcode() { public void opcodeRun() { XXX(); NOP(); }},         // 0x67
-        new opcode() { public void opcodeRun() { CLI(); IMP(); }},         // 0x68
-        new opcode() { public void opcodeRun() { EOR(); ABY(); }},         // 0x69
-        new opcode() { public void opcodeRun() { NOP(); IMP(); }},         // 0x6A
+        new opcode() { public void opcodeRun() { ADC(); ZP0(); }},         // 0x65
+        new opcode() { public void opcodeRun() { ROR(); ZP0(); }},         // 0x66
+        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0x67
+        new opcode() { public void opcodeRun() { PLA(); IMP(); }},         // 0x68
+        new opcode() { public void opcodeRun() { ADC(); IMM(); }},         // 0x69
+        new opcode() { public void opcodeRun() { ROR(); IMP(); }},         // 0x6A
         new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0x6B
-        new opcode() { public void opcodeRun() { NOP(); IMP(); }},         // 0x6C
-        new opcode() { public void opcodeRun() { EOR(); ABX(); }},         // 0x6D
-        new opcode() { public void opcodeRun() { LSR(); ABX(); }},         // 0x6E
+        new opcode() { public void opcodeRun() { JMP(); IND(); }},         // 0x6C
+        new opcode() { public void opcodeRun() { ADC(); ABS(); }},         // 0x6D
+        new opcode() { public void opcodeRun() { ROR(); ABS(); }},         // 0x6E
         new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0x6F
 
-        new opcode() { public void opcodeRun() { RTS(); IMP(); }},         // 0x70
-        new opcode() { public void opcodeRun() { ADC(); IZX(); }},         // 0x71
+        new opcode() { public void opcodeRun() { BVS(); REL(); }},         // 0x70
+        new opcode() { public void opcodeRun() { ADC(); IZY(); }},         // 0x71
         new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0x72
         new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0x73
         new opcode() { public void opcodeRun() { NOP(); IMP(); }},         // 0x74
-        new opcode() { public void opcodeRun() { ADC(); ZP0(); }},         // 0x75
-        new opcode() { public void opcodeRun() { ROR(); ZP0(); }},         // 0x76
+        new opcode() { public void opcodeRun() { ADC(); ZPX(); }},         // 0x75
+        new opcode() { public void opcodeRun() { ROR(); ZPX(); }},         // 0x76
         new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0x77
-        new opcode() { public void opcodeRun() { PLA(); IMP(); }},         // 0x78
-        new opcode() { public void opcodeRun() { ADC(); IMM(); }},         // 0x79
-        new opcode() { public void opcodeRun() { ROR(); IMP(); }},         // 0x7A
+        new opcode() { public void opcodeRun() { SEI(); IMP(); }},         // 0x78
+        new opcode() { public void opcodeRun() { ADC(); ABY(); }},         // 0x79
+        new opcode() { public void opcodeRun() { NOP(); IMP(); }},         // 0x7A
         new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0x7B
-        new opcode() { public void opcodeRun() { JMP(); IND(); }},         // 0x7C
-        new opcode() { public void opcodeRun() { ADC(); ABS(); }},         // 0x7D
-        new opcode() { public void opcodeRun() { ROR(); ABS(); }},         // 0x7E
+        new opcode() { public void opcodeRun() { NOP(); IMP(); }},         // 0x7C
+        new opcode() { public void opcodeRun() { ADC(); ABX(); }},         // 0x7D
+        new opcode() { public void opcodeRun() { ROR(); ABX(); }},         // 0x7E
         new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0x7F
 
-        new opcode() { public void opcodeRun() { BVS(); REL(); }},         // 0x8
-        new opcode() { public void opcodeRun() { ADC(); IZY(); }},         // 0x8
-        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0x8
-        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0x8
-        new opcode() { public void opcodeRun() { NOP(); IMP(); }},         // 0x8
-        new opcode() { public void opcodeRun() { ADC(); ZPX(); }},         // 0x8
-        new opcode() { public void opcodeRun() { ROR(); ZPX(); }},         // 0x8
-        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0x8
-        new opcode() { public void opcodeRun() { SEI(); IMP(); }},         // 0x8
-        new opcode() { public void opcodeRun() { ADC(); ABY(); }},         // 0x8
-        new opcode() { public void opcodeRun() { NOP(); IMP(); }},         // 0x8
-        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0x8
-        new opcode() { public void opcodeRun() { NOP(); IMP(); }},         // 0x8
-        new opcode() { public void opcodeRun() { ADC(); ABX(); }},         // 0x8
-        new opcode() { public void opcodeRun() { ROR(); ABX(); }},         // 0x8
-        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0x8
+        new opcode() { public void opcodeRun() { NOP(); IMP(); }},         // 0x80
+        new opcode() { public void opcodeRun() { STA(); IZX(); }},         // 0x81
+        new opcode() { public void opcodeRun() { NOP(); IMP(); }},         // 0x82
+        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0x83
+        new opcode() { public void opcodeRun() { STY(); ZP0(); }},         // 0x84
+        new opcode() { public void opcodeRun() { STA(); ZP0(); }},         // 0x85
+        new opcode() { public void opcodeRun() { STX(); ZP0(); }},         // 0x86
+        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0x87
+        new opcode() { public void opcodeRun() { DEY(); IMP(); }},         // 0x88
+        new opcode() { public void opcodeRun() { NOP(); IMP(); }},         // 0x89
+        new opcode() { public void opcodeRun() { TXA(); IMP(); }},         // 0x8A
+        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0x8B
+        new opcode() { public void opcodeRun() { STY(); ABS(); }},         // 0x8C
+        new opcode() { public void opcodeRun() { STA(); ABS(); }},         // 0x8D
+        new opcode() { public void opcodeRun() { STX(); ABS(); }},         // 0x8E
+        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0x8F
 
-        new opcode() { public void opcodeRun() { NOP(); IMP(); }},         // 0x90
-        new opcode() { public void opcodeRun() { STA(); IZX(); }},         // 0x91
-        new opcode() { public void opcodeRun() { NOP(); IMP(); }},         // 0x92
+        new opcode() { public void opcodeRun() { BCC(); REL(); }},         // 0x90
+        new opcode() { public void opcodeRun() { STA(); IZY(); }},         // 0x91
+        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0x92
         new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0x93
-        new opcode() { public void opcodeRun() { STY(); ZP0(); }},         // 0x94
-        new opcode() { public void opcodeRun() { STA(); ZP0(); }},         // 0x95
-        new opcode() { public void opcodeRun() { STX(); ZP0(); }},         // 0x96
+        new opcode() { public void opcodeRun() { STY(); ZPX(); }},         // 0x94
+        new opcode() { public void opcodeRun() { STA(); ZPX(); }},         // 0x95
+        new opcode() { public void opcodeRun() { STX(); ZPY(); }},         // 0x96
         new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0x97
-        new opcode() { public void opcodeRun() { DEY(); IMP(); }},         // 0x98
-        new opcode() { public void opcodeRun() { NOP(); IMP(); }},         // 0x99
-        new opcode() { public void opcodeRun() { TXA(); IMP(); }},         // 0x9A
+        new opcode() { public void opcodeRun() { TYA(); IMP(); }},         // 0x98
+        new opcode() { public void opcodeRun() { STA(); ABY(); }},         // 0x99
+        new opcode() { public void opcodeRun() { TXS(); IMP(); }},         // 0x9A
         new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0x9B
-        new opcode() { public void opcodeRun() { STY(); ABS(); }},         // 0x9C
-        new opcode() { public void opcodeRun() { STA(); ABS(); }},         // 0x9D
-        new opcode() { public void opcodeRun() { STX(); ABS(); }},         // 0x9E
+        new opcode() { public void opcodeRun() { NOP(); IMP(); }},         // 0x9C
+        new opcode() { public void opcodeRun() { STA(); ABX(); }},         // 0x9D
+        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0x9E
         new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0x9F
-
-        new opcode() { public void opcodeRun() { BCC(); REL(); }},         // 0xA0
-        new opcode() { public void opcodeRun() { STA(); IZY(); }},         // 0xA1
-        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0xA2
-        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0xA3
-        new opcode() { public void opcodeRun() { STY(); ZPX(); }},         // 0xA4
-        new opcode() { public void opcodeRun() { STA(); ZPX(); }},         // 0xA5
-        new opcode() { public void opcodeRun() { STX(); ZPY(); }},         // 0xA6
-        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0xA7
-        new opcode() { public void opcodeRun() { TYA(); IMP(); }},         // 0xA8
-        new opcode() { public void opcodeRun() { STA(); ABY(); }},         // 0xA9
-        new opcode() { public void opcodeRun() { TXS(); IMP(); }},         // 0xAA
-        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0xAB
-        new opcode() { public void opcodeRun() { NOP(); IMP(); }},         // 0xAC
-        new opcode() { public void opcodeRun() { STA(); ABX(); }},         // 0xAD
-        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0xAE
-        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0xAF
         
-        new opcode() { public void opcodeRun() { LDY(); IMM(); }},         // 0xB0
-        new opcode() { public void opcodeRun() { LDA(); IZX(); }},         // 0xB1
-        new opcode() { public void opcodeRun() { LDX(); IMM(); }},         // 0xB2
+        new opcode() { public void opcodeRun() { LDY(); IMM(); }},         // 0xA0
+        new opcode() { public void opcodeRun() { LDA(); IZX(); }},         // 0xA1
+        new opcode() { public void opcodeRun() { LDX(); IMM(); }},         // 0xA2
+        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0xA3
+        new opcode() { public void opcodeRun() { LDY(); ZP0(); }},         // 0xA4
+        new opcode() { public void opcodeRun() { LDA(); ZP0(); }},         // 0xA5
+        new opcode() { public void opcodeRun() { LDX(); ZP0(); }},         // 0xA6
+        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0xA7
+        new opcode() { public void opcodeRun() { TAY(); IMP(); }},         // 0xA8
+        new opcode() { public void opcodeRun() { LDA(); IMM(); }},         // 0xA9
+        new opcode() { public void opcodeRun() { TAX(); IMP(); }},         // 0xAA
+        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0xAB
+        new opcode() { public void opcodeRun() { LDY(); ABS(); }},         // 0xAC
+        new opcode() { public void opcodeRun() { LDA(); ABS(); }},         // 0xAD
+        new opcode() { public void opcodeRun() { LDX(); ABS(); }},         // 0xAE
+        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0xAF
+
+        new opcode() { public void opcodeRun() { BCS(); REL(); }},         // 0xB0
+        new opcode() { public void opcodeRun() { LDA(); IZY(); }},         // 0xB1
+        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0xB2
         new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0xB3
-        new opcode() { public void opcodeRun() { LDY(); ZP0(); }},         // 0xB4
-        new opcode() { public void opcodeRun() { LDA(); ZP0(); }},         // 0xB5
-        new opcode() { public void opcodeRun() { LDX(); ZP0(); }},         // 0xB6
+        new opcode() { public void opcodeRun() { LDY(); ZPX(); }},         // 0xB4
+        new opcode() { public void opcodeRun() { LDA(); ZPX(); }},         // 0xB5
+        new opcode() { public void opcodeRun() { LDX(); ZPY(); }},         // 0xB6
         new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0xB7
-        new opcode() { public void opcodeRun() { TAY(); IMP(); }},         // 0xB8
-        new opcode() { public void opcodeRun() { LDA(); IMM(); }},         // 0xB9
-        new opcode() { public void opcodeRun() { TAX(); IMP(); }},         // 0xBA
+        new opcode() { public void opcodeRun() { CLV(); IMP(); }},         // 0xB8
+        new opcode() { public void opcodeRun() { LDA(); ABY(); }},         // 0xB9
+        new opcode() { public void opcodeRun() { TSX(); IMP(); }},         // 0xBA
         new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0xBB
-        new opcode() { public void opcodeRun() { LDY(); ABS(); }},         // 0xBC
-        new opcode() { public void opcodeRun() { LDA(); ABS(); }},         // 0xBD
-        new opcode() { public void opcodeRun() { LDX(); ABS(); }},         // 0xBE
+        new opcode() { public void opcodeRun() { LDY(); ABX(); }},         // 0xBC
+        new opcode() { public void opcodeRun() { LDA(); ABX(); }},         // 0xBD
+        new opcode() { public void opcodeRun() { LDX(); ABY(); }},         // 0xBE
         new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0xBF
 
-        new opcode() { public void opcodeRun() { BCS(); REL(); }},         // 0xC0
-        new opcode() { public void opcodeRun() { LDA(); IZY(); }},         // 0xC1
-        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0xC2
+        new opcode() { public void opcodeRun() { CPY(); IMM(); }},         // 0xC0
+        new opcode() { public void opcodeRun() { CMP(); IZY(); }},         // 0xC1
+        new opcode() { public void opcodeRun() { NOP(); IMP(); }},         // 0xC2
         new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0xC3
-        new opcode() { public void opcodeRun() { LDY(); ZPX(); }},         // 0xC4
-        new opcode() { public void opcodeRun() { LDA(); ZPX(); }},         // 0xC5
-        new opcode() { public void opcodeRun() { LDX(); ZPY(); }},         // 0xC6
+        new opcode() { public void opcodeRun() { CPY(); ZP0(); }},         // 0xC4
+        new opcode() { public void opcodeRun() { CMP(); ZP0(); }},         // 0xC5
+        new opcode() { public void opcodeRun() { DEC(); ZP0(); }},         // 0xC6
         new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0xC7
-        new opcode() { public void opcodeRun() { CLV(); IMP(); }},         // 0xC8
-        new opcode() { public void opcodeRun() { LDA(); ABY(); }},         // 0xC9
-        new opcode() { public void opcodeRun() { TSX(); IMP(); }},         // 0xCA
+        new opcode() { public void opcodeRun() { INY(); IMP(); }},         // 0xC8
+        new opcode() { public void opcodeRun() { CMP(); IMM(); }},         // 0xC9
+        new opcode() { public void opcodeRun() { DEX(); IMP(); }},         // 0xCA
         new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0xCB
-        new opcode() { public void opcodeRun() { LDY(); ABX(); }},         // 0xCC
-        new opcode() { public void opcodeRun() { LDA(); ABX(); }},         // 0xCD
-        new opcode() { public void opcodeRun() { LDX(); ABY(); }},         // 0xCE
+        new opcode() { public void opcodeRun() { CPY(); ABS(); }},         // 0xCC
+        new opcode() { public void opcodeRun() { CMP(); ABS(); }},         // 0xCD
+        new opcode() { public void opcodeRun() { DEC(); ABS(); }},         // 0xCE
         new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0xCF
 
-        new opcode() { public void opcodeRun() { ; ; }},         // 0xD0
-        new opcode() { public void opcodeRun() { ; ; }},         // 0xD1
-        new opcode() { public void opcodeRun() { ; ; }},         // 0xD2
-        new opcode() { public void opcodeRun() { ; ; }},         // 0xD3
-        new opcode() { public void opcodeRun() { ; ; }},         // 0xD4
-        new opcode() { public void opcodeRun() { ; ; }},         // 0xD5
-        new opcode() { public void opcodeRun() { ; ; }},         // 0xD6
-        new opcode() { public void opcodeRun() { ; ; }},         // 0xD7
-        new opcode() { public void opcodeRun() { ; ; }},         // 0xD8
-        new opcode() { public void opcodeRun() { ; ; }},         // 0xD9
-        new opcode() { public void opcodeRun() { ; ; }},         // 0xDA
-        new opcode() { public void opcodeRun() { ; ; }},         // 0xDB
-        new opcode() { public void opcodeRun() { ; ; }},         // 0xDC
-        new opcode() { public void opcodeRun() { ; ; }},         // 0xDD
-        new opcode() { public void opcodeRun() { ; ; }},         // 0xDE
-        new opcode() { public void opcodeRun() { ; ; }},         // 0xDF
+        new opcode() { public void opcodeRun() { BNE(); REL(); }},         // 0xD0
+        new opcode() { public void opcodeRun() { CMP(); IZY(); }},         // 0xD1
+        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0xD2
+        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0xD3
+        new opcode() { public void opcodeRun() { NOP(); IMP(); }},         // 0xD4
+        new opcode() { public void opcodeRun() { CMP(); ZPX(); }},         // 0xD5
+        new opcode() { public void opcodeRun() { DEC(); ZPX(); }},         // 0xD6
+        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0xD7
+        new opcode() { public void opcodeRun() { CLD(); IMP(); }},         // 0xD8
+        new opcode() { public void opcodeRun() { CMP(); ABY(); }},         // 0xD9
+        new opcode() { public void opcodeRun() { NOP(); IMP(); }},         // 0xDA
+        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0xDB
+        new opcode() { public void opcodeRun() { NOP(); IMP(); }},         // 0xDC
+        new opcode() { public void opcodeRun() { CMP(); ABX(); }},         // 0xDD
+        new opcode() { public void opcodeRun() { DEC(); ABX(); }},         // 0xDE
+        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0xDF
 
-        new opcode() { public void opcodeRun() { ; ; }},         // 0x
-        new opcode() { public void opcodeRun() { ; ; }},         // 0x
-        new opcode() { public void opcodeRun() { ; ; }},         // 0x
-        new opcode() { public void opcodeRun() { ; ; }},         // 0x
-        new opcode() { public void opcodeRun() { ; ; }},         // 0x
-        new opcode() { public void opcodeRun() { ; ; }},         // 0x
-        new opcode() { public void opcodeRun() { ; ; }},         // 0x
-        new opcode() { public void opcodeRun() { ; ; }},         // 0x
-        new opcode() { public void opcodeRun() { ; ; }},         // 0x
-        new opcode() { public void opcodeRun() { ; ; }},         // 0x
-        new opcode() { public void opcodeRun() { ; ; }},         // 0x
-        new opcode() { public void opcodeRun() { ; ; }},         // 0x
-        new opcode() { public void opcodeRun() { ; ; }},         // 0x
-        new opcode() { public void opcodeRun() { ; ; }},         // 0x
-        new opcode() { public void opcodeRun() { ; ; }},         // 0x
-        new opcode() { public void opcodeRun() { ; ; }},         // 0x
-        new opcode() { public void opcodeRun() { ; ; }},         // 0x
-        new opcode() { public void opcodeRun() { ; ; }},         // 0x
-        new opcode() { public void opcodeRun() { ; ; }},         // 0x
-        new opcode() { public void opcodeRun() { ; ; }},         // 0x
-        new opcode() { public void opcodeRun() { ; ; }},         // 0x
-        new opcode() { public void opcodeRun() { ; ; }},         // 0x
-        new opcode() { public void opcodeRun() { ; ; }},         // 0x
-        new opcode() { public void opcodeRun() { ; ; }},         // 0x
+        new opcode() { public void opcodeRun() { CPX(); IMM(); }},         // 0xE0
+        new opcode() { public void opcodeRun() { SBC(); IZX(); }},         // 0xE1
+        new opcode() { public void opcodeRun() { NOP(); IMP(); }},         // 0xE2
+        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0xE3
+        new opcode() { public void opcodeRun() { CPX(); ZP0(); }},         // 0xE4
+        new opcode() { public void opcodeRun() { SBC(); ZP0(); }},         // 0xE5
+        new opcode() { public void opcodeRun() { INC(); ZP0(); }},         // 0xE6
+        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0xE7
+        new opcode() { public void opcodeRun() { INX(); IMP(); }},         // 0xE8
+        new opcode() { public void opcodeRun() { SBC(); IMM(); }},         // 0xE9
+        new opcode() { public void opcodeRun() { NOP(); IMP(); }},         // 0xEA
+        new opcode() { public void opcodeRun() { SBC(); IMM(); }},         // 0xEB
+        new opcode() { public void opcodeRun() { CPX(); ABS(); }},         // 0xEC
+        new opcode() { public void opcodeRun() { SBC(); ABS(); }},         // 0xED
+        new opcode() { public void opcodeRun() { INC(); ABS(); }},         // 0xEE
+        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0xEF
+        
+        new opcode() { public void opcodeRun() { BEQ(); REL(); }},         // 0xF0
+        new opcode() { public void opcodeRun() { SBC(); IZY(); }},         // 0xF1
+        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0xF2
+        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0xF3
+        new opcode() { public void opcodeRun() { NOP(); IMP(); }},         // 0xF4
+        new opcode() { public void opcodeRun() { SBC(); ZPX(); }},         // 0xF5
+        new opcode() { public void opcodeRun() { INC(); ZPX(); }},         // 0xF6
+        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0xF7
+        new opcode() { public void opcodeRun() { SED(); IMP(); }},         // 0xF8
+        new opcode() { public void opcodeRun() { SBC(); ABY(); }},         // 0xF9
+        new opcode() { public void opcodeRun() { NOP(); IMP(); }},         // 0xFA
+        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0xFB
+        new opcode() { public void opcodeRun() { NOP(); IMP(); }},         // 0xFC
+        new opcode() { public void opcodeRun() { SBC(); ABX(); }},         // 0xFD
+        new opcode() { public void opcodeRun() { INC(); ABX(); }},         // 0xFE
+        new opcode() { public void opcodeRun() { XXX(); IMP(); }},         // 0xFF
+        
     };
 
     // reset CPU into known state
